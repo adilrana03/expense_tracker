@@ -1,14 +1,21 @@
-import React from 'react'
-import { List as MUIList, ListItem, ListItemAvatar, ListItemText, Avatar, ListItemSecondarAction, IconButton, Slide } from '@material-ui/core';
+import React, { useContext } from 'react';
+import { List as MUIList, ListItem, ListItemAvatar, ListItemText, Avatar, ListItemSecondaryAction, IconButton, Slide } from '@material-ui/core';
 import { Delete, MoneyOff } from '@material-ui/icons';
+import { ExpenseTrackerContext } from '../../../context/context';
+
 
 import useStyles from './styles';
 
 const List = () => {
     const classes = useStyles();
-    const transactions = [
-        { id: 1, type: "Income", category: "Salary", amout: 50, date: new Date() }
-    ];
+    const { transactions, deleteTransaction } = useContext(ExpenseTrackerContext);
+
+    // const transactions = [
+    //     { id: 1, type: "Income", category: "Salary", amout: 50, date: "Thu Jul 06 2023" },
+    //     { id: 2, type: "Expense", category: "Pets", amout: 150, date: "Friday Jul 07 2023" },
+    //     { id: 3, type: "Income", category: "Salary", amout: 50, date: "Saturday Jul 08 2023" }
+
+    // ];
 
 
 
@@ -23,11 +30,11 @@ const List = () => {
                             </Avatar>
                         </ListItemAvatar>
                         <ListItemText primary={transaction.category} secondary={`$${transaction.amout} - ${transaction.date}`} />
-                        <ListItemSecondarAction>
-                            <IconButton>
-
+                        <ListItemSecondaryAction>
+                            <IconButton edge="end" aria-label='delete' onClick=" ">
+                                <Delete />
                             </IconButton>
-                        </ListItemSecondarAction>
+                        </ListItemSecondaryAction>
                     </ListItem>
 
                 </Slide>
