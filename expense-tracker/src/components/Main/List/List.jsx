@@ -8,14 +8,15 @@ import useStyles from './styles';
 
 const List = () => {
     const classes = useStyles();
-    const { transactions, deleteTransaction } = useContext(ExpenseTrackerContext);
+    const { deleteTransaction } = useContext(ExpenseTrackerContext);
 
-    // const transactions = [
-    //     { id: 1, type: "Income", category: "Salary", amout: 50, date: "Thu Jul 06 2023" },
-    //     { id: 2, type: "Expense", category: "Pets", amout: 150, date: "Friday Jul 07 2023" },
-    //     { id: 3, type: "Income", category: "Salary", amout: 50, date: "Saturday Jul 08 2023" }
 
-    // ];
+    const transactions = [
+        { id: 1, type: "Income", category: "Salary", amout: 50, date: "Thu Jul 06 2023" },
+        { id: 2, type: "Expense", category: "Pets", amout: 150, date: "Friday Jul 07 2023" },
+        { id: 3, type: "Income", category: "Salary", amout: 50, date: "Saturday Jul 08 2023" }
+
+    ];
 
 
 
