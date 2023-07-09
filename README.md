@@ -1,6 +1,6 @@
 # Expense Tracker with Speechly Integration
 
-![Expense Tracker Logo](expense-tracker-logo.png)
+<a href="https://ibb.co/JnPWPBL"><img src="https://i.ibb.co/R2WGWvn/Image-09-07-23-at-6-54-PM.jpg" alt="Image-09-07-23-at-6-54-PM" border="0"></a>
 
 The Expense Tracker with Speechly Integration is a web application designed to help users manage their finances by tracking their income and expenses. This application utilizes the Speechly API for voice recognition, allowing users to add income and expenses by speaking their inputs. It also provides charts to visualize the income and expenses data for better analysis.
 
