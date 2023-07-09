@@ -1,3 +1,5 @@
+# Speechly Expense Tracker
+<a href="https://ibb.co/JnPWPBL"><img src="https://i.ibb.co/R2WGWvn/Image-09-07-23-at-6-54-PM.jpg" alt="Image-09-07-23-at-6-54-PM" border="0"></a>
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
