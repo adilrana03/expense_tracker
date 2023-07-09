@@ -1,22 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Card, CardHeader, CardContent, Typography, Grid, Divider } from '@material-ui/core'
 import List from './List/List';
 import useStyle from './styles';
 import Form from './Form/Form';
+import { ExpenseTrackerContext } from '../../context/context';
+import { useSpeechContext } from '@speechly/react-client';
+import InfoCard from '../Info/Info';
+
 
 const Main = () => {
-
     const classes = useStyle();
 
-    return (
-        <Card className={classes.root}>
-            <CardHeader title="Expense Tracker" subheader="Powerd By Speechly" />
-            <CardContent>
+    const { balance } = useContext(ExpenseTrackerContext);
 
-                <Typography align='center' variant='h5'>Total Balance $100 </Typography>
-                <Typography variant='subtitle1' style={{ lineHeight: "1.5em", marginTop: "20px" }}>
-                    {/* { InfoCard} */}
-                    Try saying: Add income for $100 in Category Salary for Monday ...
+    return (
+        <Card className={classes.root} style={{ marginBottom: "20px", boxShadow: "0 5px 30px blue" }}>
+            <CardHeader title="Expense Tracker" subheader="Powerd By Speechly" style={{ textAlign: "center", marginBottom: "-15px" }} />
+            <CardContent>
+                <Typography align='center' variant='h5' color='secondary'  >Total Balance = ₹ {balance} </Typography>
+                <Typography variant='subtitle1' style={{ lineHeight: "1.2em", marginTop: "10px" }}>
+                    <InfoCard />
                 </Typography>
                 <Divider />
                 <Form />

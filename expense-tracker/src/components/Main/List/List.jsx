@@ -8,36 +8,26 @@ import useStyles from './styles';
 
 const List = () => {
     const classes = useStyles();
-    const { deleteTransaction } = useContext(ExpenseTrackerContext);
-
-
-    const transactions = [
-        { id: 1, type: "Income", category: "Salary", amout: 50, date: "Thu Jul 06 2023" },
-        { id: 2, type: "Expense", category: "Pets", amout: 150, date: "Friday Jul 07 2023" },
-        { id: 3, type: "Income", category: "Salary", amout: 50, date: "Saturday Jul 08 2023" }
-
-    ];
-
+    const { deleteTransaction, transactions } = useContext(ExpenseTrackerContext);
 
 
     return (
-        <MUIList dense={false} className={classes.list}>
+        <MUIList dense={false} className={classes.list} >
             {transactions.map((transaction) => (
-                <Slide direction='down' in mountOnEnter unmountOnExit key={transaction.id}>
+                <Slide direction='down' in mountOnEnter unmountOnExit key={transaction.id} >
                     <ListItem>
                         <ListItemAvatar>
                             <Avatar className={transaction.type === 'Income' ? classes.avatarIncome : classes.avatarExpense}>
                                 <MoneyOff />
                             </Avatar>
                         </ListItemAvatar>
-                        <ListItemText primary={transaction.category} secondary={`$${transaction.amout} - ${transaction.date}`} />
+                        <ListItemText primary={transaction.category} secondary={`₹${transaction.amount} - ${transaction.date}`} />
                         <ListItemSecondaryAction>
-                            <IconButton edge="end" aria-label='delete' onClick=" ">
+                            <IconButton edge="end" aria-label='delete' onClick={() => { deleteTransaction(transaction.id) }}>
                                 <Delete />
                             </IconButton>
                         </ListItemSecondaryAction>
                     </ListItem>
-
                 </Slide>
             ))}
 
